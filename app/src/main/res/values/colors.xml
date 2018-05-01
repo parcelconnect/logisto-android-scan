@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="yellow_light">#fff9c4</color>
+
+    <color name="text_header">@color/colorAccent</color>
+    <color name="text_white">@color/white</color>
+
+    <!-- Colour to use for text that is written over bright colours -->
+    <color name="text_over_colour">#053605</color>
+
+    <color name="orange">#FF8000</color>
+    <color name="orange_tp">#44FF8000</color>
+
+    <color name="black">#000</color>
+    <color name="grey_mid">#888</color>
+
+    <color name="green">#00FF00</color>
+    <color name="green_ok">#0D2</color>
+    <color name="green_ok_tp">#4400DD22</color>
+    <color name="red_error">#D20</color>
+    <color name="red_error_tp">#88DD2200</color>
+
+    
+    <!-- THEME COLOURS ========================================================================== -->
+
+    <color name="colorPrimary">#26c6da</color>
+    <color name="colorPrimaryDark">#0095a8</color>
+    <color name="colorPrimaryLight">#6ff9ff</color>
+    <!-- Brown colour to use for text that is on top of colorPrimary -->
+    <color name="colorPrimaryText">#3e2723</color>
+
+    <color name="colorAccent">#c2185b</color>
+    <color name="colorAccentDark">#8c0032</color>
+    <color name="colorAccentLight">#fa5788</color>
+    <!-- Light yellow to use for text that is on top of colorAccent -->
+    <color name="colorAccentText">@color/yellow_light</color>
+
+    <!-- WIDGET-SPECIFIC COLOURS ========================================================================== -->
+
+    <!-- Default colour to use as the background for a list of cards -->
+    <color name="bg_card_list">#f2f2f2</color>
+</resources>

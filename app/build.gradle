@@ -1,0 +1,197 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
+    defaultConfig {
+        applicationId "ie.fastway.scansort"
+        minSdkVersion 19
+        targetSdkVersion 26
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        // Include the version info:
+        apply from: "version.gradle"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions 'mode'
+
+    productFlavors {
+        // Define separate dev and prod product flavors.
+
+        mock {
+            dimension 'mode'
+            // We don't include the native code for AveryDennison device in mock flavour.
+            // The native code library doesn't work with the emulator.
+        }
+
+        real {
+            dimension 'mode'
+            android {
+                sourceSets {
+                    main {
+                        // Load the native-code AveryDennision "companion-api".
+                        jniLibs.srcDirs = ['main/jniLibs']
+                    }
+                }
+            }
+        }
+
+    }
+
+    sourceSets {
+
+        /* MOVED To product flavours (2017-11-08)
+        main {
+            // Load the native-code AveryDennision "companion-api".
+            jniLibs.srcDirs = ['main/jniLibs']
+        }
+        */
+
+
+        // Add the "sharedTest" directory for sharing test utility code between
+        // instrumentation tests ("androidTest") and unit tests ("test")
+
+        String sharedTestDir = 'src/sharedTest/java'
+
+        test {
+            // Adds the "sharedTest" directory as a src directory for unit tests.
+            java.srcDir sharedTestDir
+        }
+
+        androidTest {
+            // Adds the "sharedTest" directory as a src directory for instrumentation tests.
+            java.srcDir sharedTestDir
+        }
+    }
+    compileOptions {
+        // Include support for Java 8
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+    testOptions {
+        unitTests {
+            // This is required by Robolectric
+            includeAndroidResources = true
+        }
+    }
+}
+
+// Add a new method for requiring dependencies in both Android and Unit tests:
+ext.sharedTestImplementation = { dependencyName ->
+    dependencies {
+        testImplementation(dependencyName)
+        androidTestImplementation(dependencyName)
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Support the Kotlin StdLib:
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+    // Android support libraries:
+    ext.androidSupportVersion = '26.1.0'
+    implementation "com.android.support:appcompat-v7:$androidSupportVersion"
+    implementation "com.android.support:design:$androidSupportVersion"
+    implementation "com.android.support:cardview-v7:$androidSupportVersion"
+    implementation "com.android.support:recyclerview-v7:$androidSupportVersion"
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    // Shared Testing dependencies:
+    // ----
+
+    // JUnit 4:
+    sharedTestImplementation 'junit:junit:4.12'
+
+    // Hamcrest library:
+    sharedTestImplementation 'org.hamcrest:hamcrest-library:1.3'
+
+    // JVM Unit Test Setup
+    // ----
+
+    // Mockito
+    testImplementation 'org.mockito:mockito-core:1.10.19'
+
+    // Robolectric
+    testImplementation 'org.robolectric:robolectric:3.4.2'
+
+    // InstrumentationTest Dependencies
+    // ----
+    androidTestImplementation "com.android.support:support-annotations:$androidSupportVersion"
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test:rules:1.0.1'
+
+    // Espresso (UI Testing)
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:3.0.1', {
+        // Prevent clash when importing suppport-annotations separately.
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    // UI Automator (UI testing)
+    androidTestImplementation 'com.android.support.test.uiautomator:uiautomator-v18:2.1.3'
+
+    // Application libraries
+    // -----
+
+    // Logistio ----
+
+    // Equinox time utils:
+    implementation project(":equinox")
+
+    implementation project(":powdroid")
+
+    // Paloma API library.
+    implementation 'com.github.Logistio:paloma:v0.1.0'
+
+
+    // Anko ----
+    ext.anko_version = '0.10.2'
+    implementation "org.jetbrains.anko:anko-sqlite:$anko_version"
+
+    // SquareUp ----
+
+    // Retrofit-2
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+
+    // OkHttp-3
+    implementation 'com.squareup.okhttp3:okhttp:3.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+
+    // Otto EventBus
+    implementation 'com.squareup:otto:1.3.8'
+
+    // Butterknife
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    kapt 'com.jakewharton:butterknife-compiler:8.8.1'
+    // kapt is Kotlin's "annotationProcessor" directive
+
+    // Icons:
+    implementation 'com.joanzapata.iconify:android-iconify-material:2.2.2'
+
+    // Flow navigation manager:
+    // compile 'com.squareup.flow:flow:1.0.0-alpha3'
+
+    // SLF4J (Required by AveryDennison Pathfinder SDK) ----
+    // "Simple Logging Facade For Java"
+    implementation 'org.slf4j:slf4j-api:1.7.1' // This is the version used by the avd jar file.
+    implementation 'org.slf4j:slf4j-simple:1.7.21'
+
+    // Logentries:
+    implementation 'com.github.LogentriesCommunity:le_android:4.1.0'
+
+}

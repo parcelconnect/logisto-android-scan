@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ICONIFY STRINGS -->
+
+    <!-- Material Design -->
+    <string name="icon_md_bluetooth_connected">{md_bluetooth_connected}</string>
+
+
+</resources>

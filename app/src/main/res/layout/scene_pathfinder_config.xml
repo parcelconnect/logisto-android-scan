@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <!-- EXIT button container -->
+    <RelativeLayout
+        android:id="@+id/deviceConfig_navigationRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        >
+
+        <!-- DISCONNECT button -->
+        <Button
+            android:id="@+id/deviceConfig_disconnectButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:text="@string/scanner_config_disconnect"
+            />
+
+        <!-- EXIT button -->
+        <Button
+            android:id="@+id/deviceConfig_exitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="@string/scanner_config_exit"
+            />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/deviceConfig_navigationRow"
+        android:layout_alignParentTop="true"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="true"
+            android:orientation="vertical"
+            android:padding="8dp"
+            >
+
+            <!--
+                LAYOUT: scene_configure_pathfinder
+                Allows the user to configure the AveryDennison Pathfinder scanner.
+            -->
+
+            <!-- DEVICE ID -->
+            <LinearLayout
+                style="@style/DeviceConfig.Container"
+                >
+
+                <TextView
+                    style="@style/DeviceConfig.Header"
+                    android:text="@string/header_device_serial_name"
+                    />
+
+                <TextView
+                    android:id="@+id/deviceConfig_deviceId"
+                    style="@style/DeviceConfig.Value"
+                    android:text="@string/placeholder_device_serial_number"
+                    />
+
+            </LinearLayout>
+
+            <!-- BLUETOOTH ADDRESS -->
+            <LinearLayout
+                style="@style/DeviceConfig.Container"
+                >
+
+                <TextView
+                    style="@style/DeviceConfig.Header"
+                    android:text="@string/header_bluetooth_address"
+                    />
+
+                <TextView
+                    android:id="@+id/deviceConfig_bluetoothAddress"
+                    style="@style/DeviceConfig.Value"
+                    android:text="@string/placeholder_bluetooth_address"
+                    />
+
+            </LinearLayout>
+
+            <!-- SCAN MODE -->
+            <LinearLayout
+                style="@style/DeviceConfig.Container"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    style="@style/DeviceConfig.Header"
+                    android:text="@string/scan_mode_header"
+                    />
+
+                <RadioGroup
+                    android:id="@+id/deviceConfig_scanMode_radioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="12dp"
+                    >
+
+                    <RadioButton
+                        android:id="@+id/deviceConfig_scanMode_trigger"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/config_optionMargin"
+                        android:text="@string/scan_mode_trigger"
+                        android:textSize="@dimen/config_textSize"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/deviceConfig_scanMode_compatible"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/config_optionMargin"
+                        android:text="@string/scan_mode_compatible"
+                        android:textSize="@dimen/config_textSize"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/deviceConfig_scanMode_continuous"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/config_optionMargin"
+                        android:text="@string/scan_mode_continuous"
+                        android:textSize="@dimen/config_textSize"
+                        />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/deviceConfig_submit"
+                style="@style/DeviceConfig.Button"
+                android:layout_marginTop="16dp"
+                android:text="@string/submit"
+                />
+
+            <!-- RESET CONFIGURATION -->
+            <Button
+                android:id="@+id/deviceConfig_resetToDefault"
+                style="@style/DeviceConfig.Button"
+                android:text="@string/reset_to_default"
+                android:textColor="@color/red_error"
+                />
+
+            <TextView
+                android:id="@+id/deviceConfig_errorMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/red_error"
+                android:padding="4dp"
+                android:text="@string/lorem_ipsum"
+                android:textColor="@color/yellow_light"
+                android:textSize="20sp"
+                />
+
+            <TextView
+                android:id="@+id/deviceConfig_successMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@color/green_ok"
+                android:padding="4dp"
+                android:text="@string/lorem_ipsum"
+                android:textColor="@color/yellow_light"
+                android:textSize="20sp"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

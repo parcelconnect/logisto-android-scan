@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <!-- Bluetooth Management Bar -->
+    <RelativeLayout
+        android:id="@+id/devicePairing_bluetoothMonitor_container"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/red_error_tp"
+            >
+
+            <!-- Bluetooth Toggle -->
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/devicePairing_bluetoothMonitor_bluetoothToggle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                />
+
+            <!-- Bluetooth Message -->
+            <TextView
+                android:id="@+id/devicePairing_bluetoothMonitor_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/devicePairing_bluetoothMonitor_bluetoothToggle"
+                android:background="@color/orange"
+                android:gravity="center"
+                android:text="@string/bluetooth_status"
+                android:textColor="@color/text_over_colour"
+                />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!-- HEADER TEXT -->
+    <TextView
+        style="@style/ListHeaderText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="4dp"
+        android:text="@string/bluetooth_devices"
+        android:textColor="@color/colorPrimaryDark"
+        />
+
+    <!-- BUTTONS CONTAINER -->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        >
+
+        <!-- SEARCH BUTTON -->
+        <Button
+            android:id="@+id/devicePairing_searchForDevicesButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:text="@string/search_for_devices"
+            />
+
+        <!-- DISCOVERY MODE: ACTIVE -->
+        <LinearLayout
+            android:id="@+id/devicePairing_discoveryActiveContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            >
+
+            <!-- Discovery Spinner -->
+            <ProgressBar
+                android:id="@+id/devicePairing_discoverySpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                />
+
+            <!-- Discovery Text -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/searching_for_devices"
+                />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/devicePairing_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_card_list"
+        android:paddingTop="10dp"
+        />
+
+</LinearLayout>

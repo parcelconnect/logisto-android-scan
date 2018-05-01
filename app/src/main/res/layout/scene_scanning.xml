@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="4dp"
+    >
+
+    <!--
+    scene_scanning: Shows the last ScanEvent and ShipmentData response
+    -->
+
+    <!-- CONNECTED DEVICE -->
+    <RelativeLayout
+        android:id="@+id/scanningScene_connectedDevice_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccentLight"
+        android:padding="@dimen/cardView_outerPadding"
+        android:theme="@style/AppTheme.Accent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            >
+
+            <!-- "CONNECTED DEVICE" TITLE -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/connected_device"
+                android:textColor="@color/colorAccentText"
+                android:textSize="18sp"
+                />
+
+            <!-- "CONNECTED DEVICE" VALUE -->
+            <TextView
+                android:id="@+id/scanningScene_connectedDevice_deviceId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/placeholder_device_serial_number"
+                android:textColor="@color/colorAccentText"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/scanningScene_connectedDevice_configureButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:text="@string/configure"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/yellow_light"
+        android:orientation="vertical"
+        android:padding="6dp"
+        app:layout_constraintTop_toBottomOf="@id/scanningScene_connectedDevice_container"
+        >
+
+        <LinearLayout
+            style="@style/KeyValueTextPair.Container"
+            >
+
+            <!-- Barcode : header -->
+            <TextView
+                android:id="@+id/scanningScene_latestScaneEventTx_header"
+                style="@style/ScanEvent.Header"
+                android:text="@string/header_barcode"
+                />
+
+            <!-- BARCODE VALUE -->
+            <TextView
+                android:id="@+id/scanningScene_latestScanEventTx"
+                style="@style/ScanEvent.Value"
+                android:text="@string/placeholder_barcode_value"
+                />
+
+        </LinearLayout>
+
+        <!-- Tracking Number : container -->
+        <LinearLayout
+            style="@style/KeyValueTextPair.Container"
+            android:visibility="gone"
+            >
+
+            <!-- TRACKING NUMBER : header -->
+            <TextView
+                android:id="@+id/scanningScene_trackingNumber_header"
+                style="@style/ScanEvent.Header"
+                android:text="@string/header_trackingNumber"
+                />
+
+            <!-- TRACKING NUMBER -->
+            <TextView
+                android:id="@+id/scanningScene_trackingNumber"
+                style="@style/ScanEvent.Value"
+                android:text="@string/placeholder_trackingNumber"
+                android:textSize="26sp"
+                />
+
+        </LinearLayout>
+
+
+        <!-- CF : container -->
+        <LinearLayout
+            style="@style/KeyValueTextPair.Container"
+            >
+            <!-- CF : header -->
+            <TextView
+                android:id="@+id/scanningScene_cf_header"
+                style="@style/ScanEvent.Header"
+                android:text="@string/header_cf"
+                />
+
+            <!-- CF -->
+            <TextView
+                android:id="@+id/scanningScene_cf"
+                style="@style/ScanEvent.Value"
+                android:text="@string/placeholder_cf"
+                />
+
+        </LinearLayout>
+
+        <!-- RF: container -->
+        <LinearLayout
+            style="@style/KeyValueTextPair.Container"
+            >
+
+            <!-- RF : header -->
+            <TextView
+                android:id="@+id/scanningScene_rf_header"
+                style="@style/ScanEvent.Header"
+                android:text="@string/header_rf"
+                />
+
+            <!-- RF : value -->
+            <TextView
+                android:id="@+id/scanningScene_rf"
+                style="@style/ScanEvent.Value"
+                android:text="@string/placeholder_rf"
+                android:textSize="140sp"
+                />
+
+
+        </LinearLayout>
+
+        <!-- ADDRESS: container -->
+        <LinearLayout
+            style="@style/KeyValueTextPair.Container"
+            >
+
+            <!-- RF : header -->
+            <TextView
+                android:id="@+id/scanningScene_address_header"
+                style="@style/ScanEvent.Header"
+                android:text="@string/header_address"
+                />
+
+            <!-- RF : value -->
+            <TextView
+                android:id="@+id/scanningScene_address"
+                style="@style/ScanEvent.Value"
+                android:maxLines="3"
+                android:text="@string/placeholder_address"
+                android:textSize="28sp"
+                />
+
+        </LinearLayout>
+
+        <!-- ERROR MESSAGE -->
+        <TextView
+            android:id="@+id/scanningScene_errorMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/red_error"
+            android:padding="4dp"
+            android:text="@string/placeholder_scanResult_errorMessage"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            />
+
+    </LinearLayout>
+
+
+    <!-- Temp button for manually triggering scan events -->
+    <Button
+        android:id="@+id/scanningScene_manualScanButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/mock_scan"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+</android.support.constraint.ConstraintLayout>

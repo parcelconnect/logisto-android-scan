@@ -1,0 +1,109 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.Accent" parent="AppTheme">
+        <item name="colorPrimary">@color/colorAccent</item>
+        <item name="colorPrimaryDark">@color/colorAccentDark</item>
+
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
+    <!-- KEY VALUE PAIR ========================================================================== -->
+
+    <style name="KeyValueTextPair"/>
+
+    <style name="KeyValueTextPair.Container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="KeyValueTextPair.Key">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="KeyValueTextPair.Value">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">4dp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:maxLines">2</item>
+    </style>
+
+
+    <style name="CardText" parent="KeyValueTextPair.Value">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textSize">26sp</item>
+    </style>
+
+    <style name="CardText.Key" parent="KeyValueTextPair.Key">
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="CardText.Large" parent="KeyValueTextPair.Value">
+        <item name="android:textSize">28sp</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="ListHeaderText">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">@color/text_header</item>
+    </style>
+
+
+    <style name="ScanEvent"/>
+
+    <style name="ScanEvent.Header">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/text_header</item>
+        <item name="android:layout_marginRight">8dp</item>
+    </style>
+
+    <style name="ScanEvent.Value">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textSize">30sp</item>
+
+    </style>
+
+
+    <style name="DeviceConfig"/>
+
+    <style name="DeviceConfig.Container" parent="KeyValueTextPair.Container">
+        <item name="android:layout_marginTop">@dimen/item_margin_config</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="DeviceConfig.Header" parent="KeyValueTextPair.Key">
+        <item name="android:textSize">@dimen/config_textSize</item>
+    </style>
+
+    <style name="DeviceConfig.Value" parent="KeyValueTextPair.Value">
+        <item name="android:textSize">@dimen/config_textSize</item>
+    </style>
+
+    <style name="DeviceConfig.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+
+    </style>
+
+
+</resources>

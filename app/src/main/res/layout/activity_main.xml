@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.FastwayApp"
+    app:theme="@style/Theme.FastwayApp"
+    tools:context="ie.fastway.scansort.scene.MainActivity"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <ie.fastway.scansort.views.networkinfo.NetworkingInfoBar
+            android:id="@+id/main_networkingInfo"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            />
+
+        <ie.fastway.scansort.scene.FrameSceneContainer
+            android:id="@+id/scene_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@id/main_networkingInfo"
+            />
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

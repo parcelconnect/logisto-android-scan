@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/bluetoothDeviceCard_height"
+    android:padding="@dimen/cardView_outerPadding"
+    >
+
+    <!-- A ViewHolder for cards that represent devices can be connected via Bluetooth -->
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/connectableDevice_cardView"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        card_view:cardCornerRadius="@dimen/cardCornerRadiusDefault"
+        >
+
+        <!-- CardView inner container -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/scene_padding_default"
+            >
+
+            <!-- BLUETOOTH PAIRING BUTTON CONTAINER -->
+            <RelativeLayout
+                android:id="@+id/connectableDevice_bluetoothPairing_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                >
+
+                <!-- Bluetooth Status Icon -->
+                <ImageView
+                    android:id="@+id/connectableDevice_bluetoothPairing_stateIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:contentDescription="@null"
+                    />
+
+                <!-- "CONNECT" button -->
+                <Button
+                    android:id="@+id/connectableDevice_bluetoothPairing_connectButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="@string/bluetooth_connect"
+                    tools:ignore="RelativeOverlap"
+                    />
+
+            </RelativeLayout>
+
+            <!-- DEVICE DETAILS -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/connectableDevice_bluetoothPairing_container"
+                android:layout_alignParentTop="true"
+                android:orientation="vertical"
+                >
+
+                <LinearLayout
+                    android:id="@+id/connectableDevice_deviceInfo_commonName_container"
+                    style="@style/Powdroid.KeyValueTextPair.Container"
+                    >
+
+                    <TextView
+                        style="@style/CardText.Key"
+                        android:text="@string/header_device_product_name"
+                        />
+
+                    <!-- COMMON NAME -->
+                    <TextView
+                        android:id="@+id/connectableDevice_deviceInfo_commonName"
+                        style="@style/CardText.Large"
+                        android:text="@string/placeholder_device_common_name"
+                        />
+
+                </LinearLayout>
+
+                <!-- "DEVICE ID" ROW -->
+                <LinearLayout
+                    android:id="@+id/connectableDevice_deviceInfo_serialNumber_row"
+                    style="@style/Powdroid.KeyValueTextPair.Container"
+                    >
+
+                    <TextView
+                        style="@style/CardText.Key"
+                        android:text="@string/header_device_serial_name"
+                        />
+
+                    <!-- SERIAL NUMBER -->
+                    <TextView
+                        android:id="@+id/connectableDevice_deviceInfo_serialNumber"
+                        style="@style/CardText"
+                        android:text="@string/placeholder_device_serial_number"
+                        />
+
+                </LinearLayout>
+
+                <!-- "BLUETOOTH ADDRESS" ROW -->
+                <LinearLayout
+                    android:id="@+id/connectableDevice_deviceInfo_bluetoothAddress_row"
+                    style="@style/Powdroid.KeyValueTextPair.Container"
+                    >
+
+                    <TextView
+                        style="@style/CardText.Key"
+                        android:text="@string/header_bluetooth_address"
+                        />
+
+                    <!-- BLUETOOTH ADDRESS -->
+                    <TextView
+                        android:id="@+id/connectableDevice_deviceInfo_bluetoothAddress"
+                        style="@style/CardText"
+                        android:text="@string/placeholder_bluetooth_address"
+                        />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>

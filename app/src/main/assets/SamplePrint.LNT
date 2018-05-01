@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<Job>
+
+    <!-- A sample label with no volatile fields -->
+
+    <Energy>Normal</Energy>
+    <Quantity>1</Quantity>
+    <LabelSize length="1.7" units="Inches" width="2"/>
+    <Command>Print</Command>
+    <Image id="Sample" version="2">
+
+        <ImageSize
+            height="0.85000" origin="TopLeft" units="Inches" width="1.200000"
+            x="0.00000" y="0.000000"
+            />
+
+        <Presentation>0</Presentation>
+
+        <Fields count="1">
+
+            <TextField id="SampleCode">
+                <Volatile>0</Volatile>
+                <BoundingBox height="0.1" units="Inches" width="1.200000" x="0.0" y="0.65"/>
+                <HorizontalJustification>Center</HorizontalJustification>
+                <Font italics="0" pointsizeheight="8.000" pointsizewidth="8.00" rtol="0" underline="1" weight="400" wordwrap="0">Arial</Font>
+                <CharOrientation>0</CharOrientation>
+                <Data>012345675</Data>
+            </TextField>
+
+        </Fields>
+    </Image>
+</Job>

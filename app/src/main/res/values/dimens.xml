@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="actionBarHeight">50dp</dimen>
+
+    <dimen name="cardView_outerPadding">8dp</dimen>
+
+    <dimen name="scene_padding_default">8dp</dimen>
+    <dimen name="bluetoothDeviceCard_height">160dp</dimen>
+    <dimen name="cardCornerRadiusDefault">4dp</dimen>
+
+    <!-- Vertical margin to use to separate items in a config list -->
+    <dimen name="item_margin_config">8dp</dimen>
+
+    <dimen name="config_textSize">21sp</dimen>
+    <dimen name="config_optionMargin">4dp</dimen>
+
+    <dimen name="bluetoothConnectionState_iconSize">24dp</dimen>
+
+</resources>

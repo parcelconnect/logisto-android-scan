@@ -1,0 +1,89 @@
+<?xml version="1.0" ?>
+<Job>
+    <Energy>Normal</Energy>
+    <Quantity>1</Quantity>
+    <LabelSize
+        length="0.866"
+        units="Inches"
+        width="1.417"
+    />
+    <Command>Print</Command>
+
+    <!-- The "Image" XML container is manatory. It contains the printable content. -->
+    <Image id="ShipmentLabel" version="3">
+
+        <!-- ImageSize tag is required -->
+        <ImageSize
+            height="0.90000"
+            origin="TopLeft"
+            units="Inches"
+            width="1.200000"
+            x="0.00000"
+            y="0.000000"
+        />
+        <Presentation>0</Presentation>
+
+        <!-- Field count is the total number of Fields in the label -->
+        <Fields count="3">
+
+            <!-- TextField Ids must be unique and less than 32 chars (Unicode) -->
+
+            <!--
+                "Volatile" defines whether the data is inserted into the TextField at print-time.
+                    * Compile-time = 0
+                    * Run-time = 1
+            -->
+
+            <TextField id="PrimaryText">
+                <Volatile>1</Volatile>
+                <BoundingBox
+                    height="0.85"
+                    units="Inches"
+                    width="1.200000"
+                    x="0.0"
+                    y="0.18"
+                />
+                <Font pointsizeheight="26.000">Arial</Font>
+                <HorizontalJustification>Center</HorizontalJustification>
+                <Data max="20" min="0"/>
+                <ForegroundColor>White</ForegroundColor>
+
+            </TextField>
+
+            <TextField id="SecondaryText">
+                <Volatile>1</Volatile>
+                <BoundingBox
+                    height="0.85"
+                    units="Inches"
+                    width="1.200000"
+                    x="0.0"
+                    y="0.52"
+                />
+                <Font pointsizeheight="22.000">Arial</Font>
+                <HorizontalJustification>Center</HorizontalJustification>
+                <Data max="20" min="0"/>
+                <ForegroundColor>Black</ForegroundColor>
+
+            </TextField>
+
+            <TextField id="Timestamp">
+                <Volatile>1</Volatile>
+
+                <BoundingBox
+                    height="0.85"
+                    units="Inches"
+                    width="1.200000"
+                    y="0.82"
+                />
+
+                <Font pointsizeheight="7.000">Arial</Font>
+                <HorizontalJustification>Center</HorizontalJustification>
+                <Data max="20" min="0"/>
+                <ForegroundColor>Black</ForegroundColor>
+
+            </TextField>
+
+        </Fields>
+
+    </Image>
+</Job>

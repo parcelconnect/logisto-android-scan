@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">Scan &amp; Sort</string>
+    <string name="hello_world">Hello, world!</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+
+    <string name="importing_data">Data is being imported…</string>
+
+    <string name="bluetooth_connect">Connect</string>
+    <string name="bluetooth_connecting">Connecting…</string>
+    <string name="bluetooth_forget">Forget</string>
+
+    <string name="bluetooth_status">Bluetooth status</string>
+    <string name="bluetooth_status_ok">Blueooth is OK</string>
+    <string name="bluetooth_is_turned_off">Blueooth is turned off</string>
+    <string name="bluetooth_permissions_required">Blueooth permissions required</string>
+
+    <string name="header_device_product_name">Device:</string>
+    <string name="header_device_serial_name">Id:</string>
+    <string name="header_bluetooth_address">Address:</string>
+    <string name="placeholder_device_common_name">Regent ScanKing AFM 8020</string>
+    <string name="placeholder_device_serial_number">84887023</string>
+    <string name="placeholder_device_item_code">L0455007</string>
+    <string name="placeholder_bluetooth_address">00:10:60:AA:36:F8</string>
+
+    <string name="placeholder_barcode_value">ALR1701020</string>
+    <string name="placeholder_rf">RF01</string>
+    <string name="placeholder_cf">CF99</string>
+    <string name="placeholder_address">232 Fakist House, Fakis Tsitty, Eibhir</string>
+    <string name="placeholder_scanResult_errorMessage">NO ERROR</string>
+
+    <string name="bluetooth_devices">BLUETOOTH DEVICES</string>
+    <string name="search_for_devices">Search for Devices</string>
+    <string name="stop_discovery">Stop Searching</string>
+    <string name="searching_for_devices">Searching…</string>
+
+    <string name="mock_scan">Mock Scan</string>
+
+    <string name="placeholder_networking_message">Downloading…</string>
+
+    <string name="placeholder_event_at_hhmmss">11:15:05</string>
+
+    <!-- SCAN EVENT ========================================================================== -->
+    <string name="header_barcode">Barcode</string>
+    <string name="header_trackingNumber">Tracking Number</string>
+    <string name="header_cf">CF</string>
+    <string name="header_rf">RF</string>
+    <string name="header_address">Address</string>
+    <string name="placeholder_trackingNumber">LGI09912345</string>
+
+
+    <!-- DEVICE CONFIG ========================================================================== -->
+    <string name="connected_device">Connected Device</string>
+
+    <string name="scan_mode_header">Scan Mode</string>
+    <string name="scan_mode_trigger">Short</string>
+    <string name="scan_mode_compatible">Long</string>
+    <string name="scan_mode_continuous">Continuous</string>
+
+    <string name="scanner_config_disconnect">Disconnect</string>
+    <string name="scanner_config_exit">Done</string>
+
+    <string name="submit">Submit</string>
+    <string name="configure">Configure</string>
+    <string name="reset_to_default">Reset to Default</string>
+
+</resources>

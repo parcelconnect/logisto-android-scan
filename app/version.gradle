@@ -1,0 +1,24 @@
+android {
+    defaultConfig {
+        versionCode 5
+        versionName "0.5.0-rc.1"
+    }
+}
+
+
+/*
+History
+----
+
+2017-11-30
+        versionCode 4
+        versionName "0.4.0"
+
+
+2017-11-24
+        versionCode 3
+        versionName "0.0.3"
+
+
+
+ */
